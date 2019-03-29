@@ -5,25 +5,39 @@ import java.util.Scanner;
 
 public class SnakeLadders{
 	public static int [][] board;
+	private static Scanner sc;
+	private static int count;
 	public static int  random() {
 		Random rand = new Random(); 
 		int value1 = rand.nextInt(5);
 		return value1; 
 	}
 	public static boolean snake(int i,int j) {
-		//snake is in 4th place thats the co-ordinate [1,2] i.e, i=1 & j=2
-		//write your code here
-		return false;
-	}
+	
+				if(i==1 && j==2) {		
+					return true;
+				}
+				else { 
+				    return false;
+				}
+		}
 	public static boolean ladder(int i,int j) {
 		//ladder is in 3rd place thats the co-ordinate [0,3] i.e, i=0 and j=2
-		//write your code here
-		return false;
+				if(i==0 && j==2)
+				{
+					return true;
+				}
+				else 
+		            return false;
 	}
 	public static boolean gameOver(int score) {
 		//if the score is greater than 9 you win. 
-		//write your code here
-		return false;
+	   if(score > 9)
+	   {
+		   return true;
+	   }
+	   else
+		   return false;
 	}
 	public static void main(String args[]) {
 		board = new int[3][3];
@@ -33,7 +47,7 @@ public class SnakeLadders{
 				board[i][j] = k++;
 			}
 		}
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		for(int i=0;i<3;i++) {
 			for(int j=0;j<3;j++) {
 				System.out.print(board[i][j]);
